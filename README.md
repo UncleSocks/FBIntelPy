@@ -4,6 +4,8 @@
 
 In a nutshell, this tool supports the following filter types: **Posts**, **Photos**, **Videos**, **People**, **Events**, **User/Profile Information**, and **Global Search**. Some of these types also supports the addition of keywords and dates.
 
+**[Update]:** I am really happy that this tool, especially the **Posts** search type, helped me successfully submit multiple flags in Trace Lab's February 2026 Global OSINT Search Party CTF.
+
 ### Dependencies
 It is recommended to use the available PE (EXE) file. However, if you want to run it as a raw Python file, the tool is only dependent to one non-built-in library, **pyperclip**, which needs to be installed via pip.
 
