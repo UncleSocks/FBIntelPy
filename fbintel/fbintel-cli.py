@@ -300,15 +300,12 @@ def generate_url(type=None, id_type=None, id=None, keyword=None,
             "account":account,
             "section":section
         }
-        
-        return ConstructFbUrl(type, **filter_data).consturct_fb_url()
+        return print(ConstructFbUrl(type, **filter_data).consturct_fb_url())
     else:
-        print(f"Error - {type   }")
+        return print("Invalid search type. Use -h for more information.")
         
-    
     
 if __name__ == "__main__":
     args = ArgParser().parser.parse_args()
-    fb_url = generate_url(args.type, args.id_type, args.id, args.keyword,
+    generate_url(args.type, args.id_type, args.id, args.keyword,
                  args.year, args.account, args.section)
-    print(fb_url)
