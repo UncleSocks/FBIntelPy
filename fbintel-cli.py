@@ -1,6 +1,5 @@
 
-import os
-import sys
+
 import base64
 import json
 import argparse
@@ -141,9 +140,9 @@ class ConstructFbUrl:
         self.type = type.lower()
         self.id_type = id_type.lower() if id_type else None
         self.id = id.lower() if id else None
-        self.keyword = keyword.lower() if keyword else None
+        self.keyword = (quote(keyword.lower()) if keyword else None)
         self.year = year.lower() if year else None
-        self.account = account.lower() if account else None
+        self.account = (quote(account.lower()) if account else None)
         self.section = section if section else 0
 
     def _build_filtered_url(self, url_path, raw_filter_dict):
