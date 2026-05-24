@@ -1,3 +1,21 @@
+# FBIntelPy: Python Facebook Intelligence Search Tool
+# GitHub @unclesocks: https://github.com/UncleSocks
+#
+# MIT License
+#
+# Copyright (c) 2026 Tyrone Kevin Ilisan
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+# documentation files (the "Software"), to deal in the Software without restriction, including without limitation the 
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit 
+# persons to whom the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT 
+# NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 import base64
@@ -9,13 +27,11 @@ from urllib.parse import quote
 FACEBOOK_BASE_URL = "https://www.facebook.com/"
 SEARCH_TYPE_SELECTION = ["posts", "photos", "videos", "people",
                          "places", "events", "account", "search"]
-
 PEOPLE_SEARCH_ID_MAP = {
     "employer":{"filter":"employer", "name":"users_employer"},
     "city":{"filter":"city", "name":"users_location"},
     "school":{"filter":"school", "name":"users_school"}
 }
-
 ACCOUNT_SECTION_MAP = {
     0:"",
     1:"about",
@@ -54,7 +70,6 @@ ACCOUNT_SECTION_MAP = {
     34:"reviews_written",
     35:"notes"
 }
-
 SEARCH_SECTION_MAP = {
     0:"top",
     1:"posts",
@@ -123,10 +138,7 @@ class ArgParser:
             help="Specify a specific profile section number."
         )
 
-    def parse_arguments(self):
-        return self.parser.parse_args()
     
-
 def encode(filter_string):
     string_bytes = filter_string.encode("ascii")
     base64_bytes = base64.b64encode(string_bytes)
