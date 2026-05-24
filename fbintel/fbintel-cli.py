@@ -219,6 +219,8 @@ class ConstructFbUrl:
         return self._build_filtered_url(url_path, raw_filter_dict)
     
     def _construct_people_url(self):
+        if not PEOPLE_SEARCH_ID_MAP.get(self.id_type):
+            return "Unable to generate URL. Invalid ID type."
         if not self.id or not self.keyword:
             return "Unable to generate URL. Specify an ID and keyword."
         
