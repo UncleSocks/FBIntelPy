@@ -103,13 +103,13 @@ class ArgParser:
             type=str,
             default="user",
             dest="id_type",
-            help="Specify the ID type."
+            help="Specify the ID type. Available ID types: user, location, employer, city, and school."
         )
         self.parser.add_argument(
             "--id",
             type=str,
             dest="id",
-            help="Enter ID value."
+            help="ID value of the specified type. This can typically be found in the source page of facebook."
         )
         self.parser.add_argument(
             "-k", "--keyword",
@@ -128,7 +128,7 @@ class ArgParser:
             "-a", "--account",
             type=str,
             dest="account",
-            help="Enter the account name."
+            help="Account name of the target profile."
         )
         self.parser.add_argument(
             "-s", "--section",
